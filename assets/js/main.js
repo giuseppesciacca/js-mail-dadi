@@ -15,7 +15,7 @@ console.log(emailInp.value);
 const submit = document.getElementById('submit');
 const resultEl = document.getElementById('result');
 
-submit.addEventListener('click', function (e) {
+submit.addEventListener('click', function () {
 
     console.log(emailInp.value);
 
@@ -32,16 +32,14 @@ submit.addEventListener('click', function (e) {
 
     if (inList == true) {
         console.log('hai i permessi');
-        resultEl.innerHTML = 'hai i permessi';
-        resultEl.classList.add('text-success');
+        resultEl.innerHTML = 'You have permission';
         emailInp.value = '';
     } else {
         console.log('non hai i permessi');
-        resultEl.innerHTML = 'non hai i permessi';
-        resultEl.classList.add('text-danger');
+        resultEl.innerHTML = 'You don\'t have permission';
         emailInp.value = '';
     };
-})
+});
 
 /* Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer. Stabilire il vincitore, in base a chi fa il punteggio più alto.
@@ -54,7 +52,7 @@ const diceVerdict = document.getElementById('verdict');
 const launch = document.getElementById('launch');
 
 launch.addEventListener('click', function (e) {
-    e.preventDefault()
+    e.preventDefault();
 
     const numBot = nums[Math.floor(Math.random() * nums.length)];
     console.log(numBot);
