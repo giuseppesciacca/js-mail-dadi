@@ -10,14 +10,32 @@ const emailList = ['carmelo@gmail.com', 'michele@gmail.com', 'lorenzo@gmail.com'
 //chiediamo all'utente la sua email
 const emailUser = prompt('Inserisci la tua email qui:')
 
-//se presente nella lista tutto ok, altrimenti messaggio di errore
+
+//ciclo for e Se presente nella lista messaggio di ok, altrimenti messaggio di errore
+
+//un metodo senza ciclo for
+/* const inList = emailList.includes(emailUser);
+console.log(inList);
+
+if (inList == true) {
+    console.log('hai i permessi');
+} else {
+    console.log('non hai i permessi');
+}; */
+
+
+//metodo con ciclo for
+let inList = false;
 for (let i = 0; i < emailList.length; i++) {
     const element = emailList[i];
 
     if (emailUser == element) {
-        console.log('hai i permessi');
-    } else if (emailUser != element) {
-        console.log('non hai i permessi');
+        inList = true;
     };
+};
 
-}
+if (inList == true) {
+    console.log('hai i permessi');
+} else {
+    console.log('non hai i permessi');
+};
