@@ -10,13 +10,14 @@ const emailList = ['carmelo@gmail.com', 'michele@gmail.com', 'lorenzo@gmail.com'
 //chiediamo all'utente la sua email
 const emailInp = document.getElementById('email');
 console.log(emailInp.value);
+emailInp.focus();
 
 //al click
 const submit = document.getElementById('submit');
+const empty = document.getElementById('empty');
 const resultEl = document.getElementById('result');
 
 submit.addEventListener('click', function () {
-
     console.log(emailInp.value);
 
     //ciclo for e Se presente nella lista messaggio di ok, altrimenti messaggio di errore
@@ -33,13 +34,19 @@ submit.addEventListener('click', function () {
     if (inList == true) {
         console.log('hai i permessi');
         resultEl.innerHTML = 'You have permission';
+        resultEl.style.color = 'rgb(25, 135, 84)';
         emailInp.value = '';
     } else {
         console.log('non hai i permessi');
         resultEl.innerHTML = 'You don\'t have permission';
+        resultEl.style.color = 'rgb(220, 53, 69)';
         emailInp.value = '';
     };
 });
+
+empty.addEventListener('click', function () {
+    resultEl.innerHTML = '';
+})
 
 /* Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer. Stabilire il vincitore, in base a chi fa il punteggio più alto.
