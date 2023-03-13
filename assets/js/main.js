@@ -16,8 +16,6 @@ const submit = document.getElementById('submit');
 const resultEl = document.getElementById('result');
 
 submit.addEventListener('click', function (e) {
-    //annullo il caricamento pagina al click
-    e.preventDefault();
 
     console.log(emailInp.value);
 
@@ -34,10 +32,14 @@ submit.addEventListener('click', function (e) {
 
     if (inList == true) {
         console.log('hai i permessi');
-        resultEl.innerHTML = 'hai i permessi'
+        resultEl.innerHTML = 'hai i permessi';
+        resultEl.classList.add('text-success');
+        emailInp.value = '';
     } else {
         console.log('non hai i permessi');
-        resultEl.innerHTML = 'non hai i permessi'
+        resultEl.innerHTML = 'non hai i permessi';
+        resultEl.classList.add('text-danger');
+        emailInp.value = '';
     };
 })
 
@@ -59,9 +61,4 @@ if (numBot > numUser) {
     console.log('Stesso numero');
 } else {
     console.log('Hai vinto!');
-}
-
-
-
-
-
+};
