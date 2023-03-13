@@ -48,17 +48,32 @@ Generare un numero random da 1 a 6, sia per il giocatore sia per il computer. St
  */
 
 const nums = ['1', '2', '3', '4', '5', '6'];
+const resultBot = document.getElementById('result_bot');
+const resultUser = document.getElementById('result_user');
+const diceVerdict = document.getElementById('verdict');
+const launch = document.getElementById('launch');
 
-const numBot = nums[Math.floor(Math.random() * nums.length)];
-console.log(numBot);
+launch.addEventListener('click', function (e) {
+    e.preventDefault()
 
-const numUser = nums[Math.floor(Math.random() * nums.length)];
-console.log(numUser);
+    const numBot = nums[Math.floor(Math.random() * nums.length)];
+    console.log(numBot);
 
-if (numBot > numUser) {
-    console.log('Hai perso!');
-} else if (numBot == numUser) {
-    console.log('Stesso numero');
-} else {
-    console.log('Hai vinto!');
-};
+    const numUser = nums[Math.floor(Math.random() * nums.length)];
+    console.log(numUser);
+
+    resultBot.innerHTML = numBot
+    resultUser.innerHTML = numUser
+
+    if (numBot > numUser) {
+        console.log('Hai perso!');
+        diceVerdict.innerHTML = 'Hai perso!';
+    } else if (numBot == numUser) {
+        console.log('Stesso numero');
+        diceVerdict.innerHTML = 'Stesso numero';
+    } else {
+        console.log('Hai vinto!');
+        diceVerdict.innerHTML = 'Hai vinto!';
+    };
+});
+

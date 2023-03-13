@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <section>
+    <section class="py-5">
         <div class="container py-5">
             <h2 class="text-center">Validazione e-mail</h2>
 
@@ -35,10 +35,33 @@
         </div>
     </section>
 
-    <section class="bg-success">
+    <section class="bg-success py-5">
         <div class="container py-5">
-            <h2 class="text-center text-white">Dices game</h2>
+            <h2 class="text-center text-white pb-3">Dices game</h2>
 
+            <div class="row text-center g-3 justify-content-center">
+                <div class="col">
+                    <div class="card">
+                        <h3>Bot number</h3>
+                        <p class="fs-4" id="result_bot"></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h3>User number</h3>
+                        <p class="fs-4" id="result_user"></p>
+                    </div>
+
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <h3>Verdict</h3>
+                        <p class="fs-4" id="verdict"></p>
+                    </div>
+                </div>
+
+                <button id="launch" class="btn btn-primary m-3 w-25">Tira di nuovo</button>
+            </div>
 
         </div>
     </section>
