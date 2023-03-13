@@ -62,18 +62,17 @@ launch.addEventListener('click', function (e) {
     const numUser = nums[Math.floor(Math.random() * nums.length)];
     console.log(numUser);
 
-    resultBot.innerHTML = numBot
-    resultUser.innerHTML = numUser
+    resultBot.innerHTML = numBot;
+    resultUser.innerHTML = numUser;
 
     if (numBot > numUser) {
         console.log('Hai perso!');
-        diceVerdict.innerHTML = 'Hai perso!';
+        diceVerdict.innerHTML = '<i class="fa-solid fa-thumbs-down"></i> You lose!';
     } else if (numBot == numUser) {
         console.log('Stesso numero');
-        diceVerdict.innerHTML = 'Stesso numero';
+        diceVerdict.innerHTML = '<i class="fa-solid fa-handshake-simple"></i> Same number';
     } else {
         console.log('Hai vinto!');
-        diceVerdict.innerHTML = 'Hai vinto!';
+        diceVerdict.innerHTML = '<i class="fa-solid fa-thumbs-up"></i> You won!';
     };
 });
-
