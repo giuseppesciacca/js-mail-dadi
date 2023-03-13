@@ -8,34 +8,40 @@ Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in
 const emailList = ['carmelo@gmail.com', 'michele@gmail.com', 'lorenzo@gmail.com', 'fabio@gmail.com', 'donato@gmail.com', 'giuliano@gmail.com'];
 
 //chiediamo all'utente la sua email
-const emailUser = prompt('Inserisci la tua email qui:')
+const emailInp = document.getElementById('email');
+console.log(emailInp.value);
 
+//al click
+const submit = document.getElementById('submit');
+const resultEl = document.getElementById('result');
 
-//ciclo for e Se presente nella lista messaggio di ok, altrimenti messaggio di errore
+submit.addEventListener('click', function (e) {
+    //annullo il caricamento pagina al click
+    e.preventDefault();
 
-//un metodo senza ciclo for
-/* const inList = emailList.includes(emailUser);
-console.log(inList);
+    console.log(emailInp.value);
 
-if (inList == true) {
-    console.log('hai i permessi');
-} else {
-    console.log('non hai i permessi');
-}; */
+    //ciclo for e Se presente nella lista messaggio di ok, altrimenti messaggio di errore
+    let inList = false;
 
+    for (let i = 0; i < emailList.length; i++) {
+        const element = emailList[i];
 
-//metodo con ciclo for
-let inList = false;
-for (let i = 0; i < emailList.length; i++) {
-    const element = emailList[i];
-
-    if (emailUser == element) {
-        inList = true;
+        if (emailInp.value == element) {
+            inList = true;
+        };
     };
-};
 
-if (inList == true) {
-    console.log('hai i permessi');
-} else {
-    console.log('non hai i permessi');
-};
+    if (inList == true) {
+        console.log('hai i permessi');
+        resultEl.innerHTML = 'hai i permessi'
+    } else {
+        console.log('non hai i permessi');
+        resultEl.innerHTML = 'non hai i permessi'
+    };
+})
+
+
+
+
+
